@@ -5,7 +5,9 @@ final class PageViewController: UIViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var pageControl: UIPageControl!
     
-    private let spiders = Spider.allCases
+    private let spiders = [Spider(name: Name.Spider.tobey, poster: Image.Spider.tobeyLogo, icon: Image.Spider.tobeyIcon, rate: 0),
+                           Spider(name: Name.Spider.andrew, poster: Image.Spider.andrewLogo, icon: Image.Spider.andrewIcon, rate: 0),
+                           Spider(name: Name.Spider.tom, poster: Image.Spider.tomLogo, icon: Image.Spider.tomIcon, rate: 0)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +42,7 @@ extension PageViewController {
                                                         y: 0,
                                                         width: view.frame.size.width,
                                                         height: scrollView.frame.size.height))
-            pageView.configView(image: spiders[page].logo,
+            pageView.configView(image: spiders[page].poster,
                                 spiderName: spiders[page].name)
             scrollView.addSubview(pageView)
         }

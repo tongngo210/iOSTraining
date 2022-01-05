@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,11 +22,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="M3S-aL-98j">
-                                <rect key="frame" x="145" y="214" width="124" height="502"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRo-lt-Ckv" customClass="SpiderRatingView" customModule="UIKitPractice" customModuleProvider="target">
+                                <rect key="frame" x="12" y="214" width="390" height="125"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="gCg-8v-47b"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="M3S-aL-98j">
+                                <rect key="frame" x="12" y="419" width="390" height="114"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jux-7r-HrA">
-                                        <rect key="frame" x="0.0" y="0.0" width="124" height="114"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jux-7r-HrA">
+                                        <rect key="frame" x="0.0" y="0.0" width="122" height="114"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="tobeySpider"/>
                                         <connections>
@@ -33,15 +41,15 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKC-oL-uyj">
-                                        <rect key="frame" x="0.0" y="194" width="124" height="114"/>
+                                        <rect key="frame" x="132" y="0.0" width="124" height="114"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="andrewSpider"/>
                                         <connections>
                                             <action selector="spiderButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="n6t-zw-F1c"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdA-QF-0m2">
-                                        <rect key="frame" x="0.0" y="388" width="124" height="114"/>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdA-QF-0m2">
+                                        <rect key="frame" x="266" y="0.0" width="124" height="114"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="tomSpider"/>
                                         <connections>
@@ -50,18 +58,42 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaW-MY-xn8">
+                                <rect key="frame" x="40" y="653" width="334" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="vNf-cf-CdW"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done">
+                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="M7s-uY-AYQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kaW-MY-xn8" secondAttribute="trailing" constant="40" id="2yQ-XX-cWA"/>
+                            <constraint firstItem="ZRo-lt-Ckv" firstAttribute="top" secondItem="GUz-dC-gah" secondAttribute="bottom" constant="100" id="5lY-96-mj2"/>
+                            <constraint firstItem="ZRo-lt-Ckv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="12" id="8al-Mp-xo8"/>
+                            <constraint firstItem="M3S-aL-98j" firstAttribute="top" secondItem="ZRo-lt-Ckv" secondAttribute="bottom" constant="80" id="8yi-lu-FJZ"/>
+                            <constraint firstItem="kaW-MY-xn8" firstAttribute="top" secondItem="M3S-aL-98j" secondAttribute="bottom" constant="120" id="A89-4n-0Xu"/>
+                            <constraint firstItem="kaW-MY-xn8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="IIH-RW-LYW"/>
                             <constraint firstItem="GUz-dC-gah" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="IzC-UF-GiH"/>
-                            <constraint firstItem="M3S-aL-98j" firstAttribute="top" secondItem="GUz-dC-gah" secondAttribute="bottom" constant="100" id="IzD-IB-8PP"/>
-                            <constraint firstItem="M3S-aL-98j" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="qCF-xi-YPX"/>
+                            <constraint firstItem="M3S-aL-98j" firstAttribute="leading" secondItem="ZRo-lt-Ckv" secondAttribute="leading" id="fZh-W8-fkU"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZRo-lt-Ckv" secondAttribute="trailing" constant="12" id="mxI-QK-c27"/>
+                            <constraint firstItem="M3S-aL-98j" firstAttribute="trailing" secondItem="ZRo-lt-Ckv" secondAttribute="trailing" id="pMB-Ic-hWQ"/>
                             <constraint firstItem="GUz-dC-gah" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="yUx-xQ-T4m"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="andrewButton" destination="pKC-oL-uyj" id="hJJ-9m-649"/>
+                        <outlet property="doneButton" destination="kaW-MY-xn8" id="2bO-ad-PE5"/>
+                        <outlet property="spiderRatingView" destination="ZRo-lt-Ckv" id="JPL-8Q-jcN"/>
                         <outlet property="tobeyButton" destination="jux-7r-HrA" id="m75-G4-wMq"/>
                         <outlet property="tomButton" destination="GdA-QF-0m2" id="60e-2y-RFn"/>
                     </connections>
@@ -75,5 +107,11 @@
         <image name="andrewSpider" width="100" height="100"/>
         <image name="tobeySpider" width="100" height="100"/>
         <image name="tomSpider" width="100" height="100"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

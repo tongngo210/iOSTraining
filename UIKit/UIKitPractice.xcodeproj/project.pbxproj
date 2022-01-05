@@ -27,8 +27,10 @@
 		E4C29BCE2782E4C1001EB36D /* SpiderPickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C29BCD2782E4C1001EB36D /* SpiderPickViewController.swift */; };
 		E4C29BD02782E588001EB36D /* SpiderWelcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C29BCF2782E588001EB36D /* SpiderWelcome.storyboard */; };
 		E4C29BD22782E5FB001EB36D /* SpiderPick.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C29BD12782E5FB001EB36D /* SpiderPick.storyboard */; };
-		E4C29BD42782F42F001EB36D /* SpiderCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C29BD32782F42F001EB36D /* SpiderCases.swift */; };
+		E4C29BD42782F42F001EB36D /* Spider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C29BD32782F42F001EB36D /* Spider.swift */; };
 		E4C29BD72782F844001EB36D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C29BD62782F844001EB36D /* MainViewController.swift */; };
+		E4E1763A2785466D00C9A154 /* SpiderRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E176392785466D00C9A154 /* SpiderRatingView.swift */; };
+		E4E1763C2785468400C9A154 /* SpiderRatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E1763B2785468400C9A154 /* SpiderRatingView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,8 +56,10 @@
 		E4C29BCD2782E4C1001EB36D /* SpiderPickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiderPickViewController.swift; sourceTree = "<group>"; };
 		E4C29BCF2782E588001EB36D /* SpiderWelcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SpiderWelcome.storyboard; sourceTree = "<group>"; };
 		E4C29BD12782E5FB001EB36D /* SpiderPick.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SpiderPick.storyboard; sourceTree = "<group>"; };
-		E4C29BD32782F42F001EB36D /* SpiderCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiderCases.swift; sourceTree = "<group>"; };
+		E4C29BD32782F42F001EB36D /* Spider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spider.swift; sourceTree = "<group>"; };
 		E4C29BD62782F844001EB36D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E4E176392785466D00C9A154 /* SpiderRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiderRatingView.swift; sourceTree = "<group>"; };
+		E4E1763B2785468400C9A154 /* SpiderRatingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpiderRatingView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +146,6 @@
 			children = (
 				E4C29BCB2782E4A1001EB36D /* Welcome */,
 				E4C29BCC2782E4AE001EB36D /* Pick */,
-				E4C29BD32782F42F001EB36D /* SpiderCases.swift */,
 			);
 			path = Spider;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 		E4A70F8D277B1A2D00CA57FC /* UIKitPractice */ = {
 			isa = PBXGroup;
 			children = (
+				E4FFC77F2785A89100533172 /* Model */,
 				E45E99C62782D8CB00741E6C /* Scenes */,
 				E4C29BD52782F79D001EB36D /* Utils */,
 				E424FEB02784375B00084D5B /* Extensions */,
@@ -189,6 +193,7 @@
 		E4C29BCC2782E4AE001EB36D /* Pick */ = {
 			isa = PBXGroup;
 			children = (
+				E4E176382785462A00C9A154 /* SpiderRatingView */,
 				E4C29BCD2782E4C1001EB36D /* SpiderPickViewController.swift */,
 				E4C29BD12782E5FB001EB36D /* SpiderPick.storyboard */,
 			);
@@ -201,6 +206,23 @@
 				E4C29BC92782E409001EB36D /* Constraints.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		E4E176382785462A00C9A154 /* SpiderRatingView */ = {
+			isa = PBXGroup;
+			children = (
+				E4E176392785466D00C9A154 /* SpiderRatingView.swift */,
+				E4E1763B2785468400C9A154 /* SpiderRatingView.xib */,
+			);
+			path = SpiderRatingView;
+			sourceTree = "<group>";
+		};
+		E4FFC77F2785A89100533172 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E4C29BD32782F42F001EB36D /* Spider.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +287,7 @@
 				E4A70F98277B1A3000CA57FC /* Assets.xcassets in Resources */,
 				E4C29BD02782E588001EB36D /* SpiderWelcome.storyboard in Resources */,
 				E404C5C82784060200E6F668 /* EasyCustomView.xib in Resources */,
+				E4E1763C2785468400C9A154 /* SpiderRatingView.xib in Resources */,
 				E4C29BD22782E5FB001EB36D /* SpiderPick.storyboard in Resources */,
 				E424FEAD27842F9100084D5B /* Page.storyboard in Resources */,
 				E404C5C12784037D00E6F668 /* Custom.storyboard in Resources */,
@@ -282,10 +305,11 @@
 			files = (
 				E404C5C6278405D900E6F668 /* EasyCustomView.swift in Sources */,
 				E4C29BD72782F844001EB36D /* MainViewController.swift in Sources */,
-				E4C29BD42782F42F001EB36D /* SpiderCases.swift in Sources */,
+				E4C29BD42782F42F001EB36D /* Spider.swift in Sources */,
 				E424FEAF27842FB000084D5B /* PageViewController.swift in Sources */,
 				E404C5BE2783FDA500E6F668 /* RatingCases.swift in Sources */,
 				E4A70F8F277B1A2D00CA57FC /* AppDelegate.swift in Sources */,
+				E4E1763A2785466D00C9A154 /* SpiderRatingView.swift in Sources */,
 				E4C29BCA2782E409001EB36D /* Constraints.swift in Sources */,
 				E4A70F91277B1A2D00CA57FC /* SceneDelegate.swift in Sources */,
 				E4C29BCE2782E4C1001EB36D /* SpiderPickViewController.swift in Sources */,

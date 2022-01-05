@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpiderRatingView" customModule="UIKitPractice" customModuleProvider="target">
+            <connections>
+                <outlet property="ratingSlider" destination="Oxo-uX-xqP" id="xz7-R1-aYC"/>
+                <outlet property="spiderImageView" destination="VBA-bJ-ZlJ" id="Zwb-gc-ERq"/>
+                <outlet property="spiderNameLabel" destination="rvI-TW-Jhr" id="5Jg-Co-CaO"/>
+                <outlet property="spiderRatingLabel" destination="N1M-Ck-fSK" id="agx-3j-pRp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="492" height="125"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFa-aO-M2Y">
+                    <rect key="frame" x="0.0" y="0.0" width="492" height="125"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="andrewSpider" translatesAutoresizingMaskIntoConstraints="NO" id="VBA-bJ-ZlJ">
+                            <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="VBA-bJ-ZlJ" secondAttribute="height" multiplier="1:1" id="Ooe-11-PN5"/>
+                                <constraint firstAttribute="width" constant="125" id="R9o-Kp-ZGl"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amazing Spiderman" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvI-TW-Jhr">
+                            <rect key="frame" x="145" y="8" width="339" height="27.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1M-Ck-fSK">
+                            <rect key="frame" x="145" y="63.5" width="43" height="33.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Oxo-uX-xqP">
+                            <rect key="frame" x="243" y="65.5" width="239" height="31"/>
+                            <connections>
+                                <action selector="sliderDidChange:" destination="-1" eventType="valueChanged" id="hRv-Wh-WT1"/>
+                            </connections>
+                        </slider>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <constraints>
+                        <constraint firstItem="VBA-bJ-ZlJ" firstAttribute="leading" secondItem="IFa-aO-M2Y" secondAttribute="leading" id="1Nc-XB-30y"/>
+                        <constraint firstItem="rvI-TW-Jhr" firstAttribute="top" secondItem="IFa-aO-M2Y" secondAttribute="top" constant="8" id="5Eb-FF-BNF"/>
+                        <constraint firstAttribute="trailing" secondItem="Oxo-uX-xqP" secondAttribute="trailing" constant="12" id="Ahx-Pw-06f"/>
+                        <constraint firstItem="N1M-Ck-fSK" firstAttribute="bottom" secondItem="VBA-bJ-ZlJ" secondAttribute="bottom" constant="-28" id="DEX-cF-OTG"/>
+                        <constraint firstItem="N1M-Ck-fSK" firstAttribute="leading" secondItem="rvI-TW-Jhr" secondAttribute="leading" id="I3O-FT-76S"/>
+                        <constraint firstAttribute="trailing" secondItem="rvI-TW-Jhr" secondAttribute="trailing" constant="8" id="LJM-kL-qlJ"/>
+                        <constraint firstItem="rvI-TW-Jhr" firstAttribute="leading" secondItem="VBA-bJ-ZlJ" secondAttribute="trailing" constant="20" id="RoW-1Y-4AF"/>
+                        <constraint firstItem="VBA-bJ-ZlJ" firstAttribute="top" secondItem="IFa-aO-M2Y" secondAttribute="top" id="a0G-7F-hli"/>
+                        <constraint firstItem="Oxo-uX-xqP" firstAttribute="centerY" secondItem="N1M-Ck-fSK" secondAttribute="centerY" id="fex-s4-4N5"/>
+                        <constraint firstItem="Oxo-uX-xqP" firstAttribute="leading" secondItem="VBA-bJ-ZlJ" secondAttribute="trailing" constant="120" id="snH-f6-dJ1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="IFa-aO-M2Y" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="09k-Lc-EUI"/>
+                <constraint firstAttribute="bottom" secondItem="IFa-aO-M2Y" secondAttribute="bottom" id="4zc-nt-6hU"/>
+                <constraint firstAttribute="trailing" secondItem="IFa-aO-M2Y" secondAttribute="trailing" id="8Ya-bW-3gb"/>
+                <constraint firstItem="IFa-aO-M2Y" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PvR-X9-rX8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="127.53623188405798" y="-75"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="andrewSpider" width="100" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

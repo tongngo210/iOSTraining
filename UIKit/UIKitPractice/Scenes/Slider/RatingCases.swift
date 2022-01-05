@@ -8,18 +8,33 @@ enum RatingCases: String, CaseIterable {
     case good = "Good"
     case veryGood = "Very good"
     
+    var emojiColor: UIColor {
+        switch self {
+        case .veryBad:
+            return .red
+        case .bad:
+            return .orange
+        case .normal:
+            return .yellow
+        case .good:
+            return .systemGreen
+        case .veryGood:
+            return .green
+        }
+    }
+    
     var emojiImage: UIImage {
         switch self {
         case .veryBad:
-            return Image.Emoji.veryBadFace ?? UIImage()
+            return Image.Emoji.veryBadFace
         case .bad:
-            return Image.Emoji.badFace ?? UIImage()
+            return Image.Emoji.badFace
         case .normal:
-            return Image.Emoji.normalFace ?? UIImage()
+            return Image.Emoji.normalFace
         case .good:
-            return Image.Emoji.goodFace ?? UIImage()
+            return Image.Emoji.goodFace
         case .veryGood:
-            return Image.Emoji.veryGoodFace ?? UIImage()
+            return Image.Emoji.veryGoodFace
         }
     }
     

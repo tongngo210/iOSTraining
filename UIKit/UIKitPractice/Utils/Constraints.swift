@@ -25,17 +25,20 @@ enum ViewController {
 
 enum Image {
     enum Spider {
-        static let tobeyLogo = UIImage(named: "tobeyLogo")
-        static let andrewLogo = UIImage(named: "andrewLogo")
-        static let tomLogo = UIImage(named: "tomLogo")
+        static let tobeyLogo = UIImage(named: "tobeyLogo") ?? UIImage()
+        static let andrewLogo = UIImage(named: "andrewLogo") ?? UIImage()
+        static let tomLogo = UIImage(named: "tomLogo") ?? UIImage()
+        static let tobeyIcon = UIImage(named: "tobeySpider") ?? UIImage()
+        static let andrewIcon = UIImage(named: "andrewSpider") ?? UIImage()
+        static let tomIcon = UIImage(named: "tomSpider") ?? UIImage()
     }
     
     enum Emoji {
-        static let veryGoodFace = UIImage(named: "face1")
-        static let goodFace = UIImage(named: "face2")
-        static let normalFace = UIImage(named: "face3")
-        static let badFace = UIImage(named: "face4")
-        static let veryBadFace = UIImage(named: "face5")
+        static let veryGoodFace = UIImage(named: "face1") ?? UIImage()
+        static let goodFace = UIImage(named: "face2") ?? UIImage()
+        static let normalFace = UIImage(named: "face3") ?? UIImage()
+        static let badFace = UIImage(named: "face4") ?? UIImage()
+        static let veryBadFace = UIImage(named: "face5") ?? UIImage()
     }
 }
 
@@ -48,5 +51,6 @@ enum Name {
     
     enum NibName {
         static let easyCustomView = "EasyCustomView"
+        static let spiderRatingView = "SpiderRatingView"
     }
 }
