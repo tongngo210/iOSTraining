@@ -23,9 +23,9 @@ final class EasyCustomView: UIView {
         customView.frame = self.bounds
     }
     
-    func configView(image: UIImage, spiderName: String) {
+    func configView(spider: Spider?) {
         backgroundView.backgroundColor = .random
-        imageView.image = image
-        nameLabel.text = "This is \(spiderName)"
+        imageView.image = spider?.poster ?? UIImage()
+        nameLabel.text = "This is \(spider?.name ?? "")"
     }
 }

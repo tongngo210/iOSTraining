@@ -27,7 +27,7 @@ final class SpiderRatingView: UIView {
         self.addSubview(view)
     }
     
-    @IBAction func sliderDidChange(_ sender: UISlider) {
+    @IBAction func didChangeValueSlider(_ sender: UISlider) {
         let value = Int(sender.value)
         spiderRatingLabel.text = "\(value) %"
         spider?.rate = value

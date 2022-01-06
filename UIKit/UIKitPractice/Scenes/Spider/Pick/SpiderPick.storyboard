@@ -37,7 +37,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="tobeySpider"/>
                                         <connections>
-                                            <action selector="spiderButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Bfv-Qu-nhf"/>
+                                            <action selector="didTapSpiderButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ctl-yc-fge"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKC-oL-uyj">
@@ -45,7 +45,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="andrewSpider"/>
                                         <connections>
-                                            <action selector="spiderButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="n6t-zw-F1c"/>
+                                            <action selector="didTapSpiderButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1CD-yc-KQ4"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdA-QF-0m2">
@@ -53,7 +53,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="tomSpider"/>
                                         <connections>
-                                            <action selector="spiderButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Man-t6-K5Z"/>
+                                            <action selector="didTapSpiderButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jfU-5A-ZVd"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -70,7 +70,7 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="25"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="doneButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="M7s-uY-AYQ"/>
+                                    <action selector="didTapDoneButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1JB-5Y-AQn"/>
                                 </connections>
                             </button>
                         </subviews>

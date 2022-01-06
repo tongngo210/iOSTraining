@@ -20,7 +20,7 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="40" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7ip-gX-4jU">
                                 <rect key="frame" x="38" y="683" width="338" height="31"/>
                                 <connections>
-                                    <action selector="sliderDidSlide:" destination="Y6W-OH-hqX" eventType="valueChanged" id="n9x-XM-meY"/>
+                                    <action selector="didChangeValueRatingSlider:" destination="Y6W-OH-hqX" eventType="valueChanged" id="f6t-wG-YQe"/>
                                 </connections>
                             </slider>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="face1" translatesAutoresizingMaskIntoConstraints="NO" id="ulK-Dg-S8D">
@@ -56,7 +56,7 @@
                     <connections>
                         <outlet property="faceImageView" destination="ulK-Dg-S8D" id="edL-ly-rgw"/>
                         <outlet property="ratingLabel" destination="unQ-qE-fK7" id="qCW-Ua-bPW"/>
-                        <outlet property="slider" destination="7ip-gX-4jU" id="Jhw-DE-Pge"/>
+                        <outlet property="ratingSlider" destination="7ip-gX-4jU" id="Jhw-DE-Pge"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

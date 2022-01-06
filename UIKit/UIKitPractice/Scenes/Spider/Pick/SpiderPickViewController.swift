@@ -25,12 +25,12 @@ final class SpiderPickViewController: UIViewController {
         configView()
     }
 
-    @IBAction func spiderButtonPressed(_ sender: UIButton) {
+    @IBAction func didTapSpiderButton(_ sender: UIButton) {
         currentSpider = spiders[sender.tag]
         spiderRatingView.configView(spider: currentSpider)
     }
     
-    @IBAction func doneButtonPressed(_ sender: UIButton) {
+    @IBAction func didTapDoneButton(_ sender: UIButton) {
         if let spider = spiderRatingView.spider {
             doneDelegate?.didTapDone(spider: spider)
         }

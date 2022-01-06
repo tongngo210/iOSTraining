@@ -42,8 +42,7 @@ extension PageViewController {
                                                         y: 0,
                                                         width: view.frame.size.width,
                                                         height: scrollView.frame.size.height))
-            pageView.configView(image: spiders[page].poster,
-                                spiderName: spiders[page].name)
+            pageView.configView(spider: spiders[page])
             scrollView.addSubview(pageView)
         }
     }

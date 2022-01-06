@@ -46,7 +46,7 @@
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Oxo-uX-xqP">
                             <rect key="frame" x="243" y="65.5" width="239" height="31"/>
                             <connections>
-                                <action selector="sliderDidChange:" destination="-1" eventType="valueChanged" id="hRv-Wh-WT1"/>
+                                <action selector="didChangeValueSlider:" destination="-1" eventType="valueChanged" id="gYZ-BB-V9X"/>
                             </connections>
                         </slider>
                     </subviews>
