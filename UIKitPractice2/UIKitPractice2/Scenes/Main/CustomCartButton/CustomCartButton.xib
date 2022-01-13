@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomCartButton" customModule="UIKitPractice2" customModuleProvider="target">
+            <connections>
+                <outlet property="cartButton" destination="tbD-hd-HsC" id="IPw-39-S8h"/>
+                <outlet property="numberLabel" destination="mGQ-ep-DOT" id="Evj-R2-jsu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XbU-d9-h1B">
+                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbD-hd-HsC">
+                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" imagePadding="0.0">
+                                <imageReference key="image" image="cart" catalog="system" symbolScale="large"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="default"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="didTapCartButton:" destination="-1" eventType="touchUpInside" id="MQm-pH-tzD"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGQ-ep-DOT">
+                            <rect key="frame" x="25.5" y="4" width="14.5" height="14.5"/>
+                            <color key="backgroundColor" systemColor="systemRedColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="mGQ-ep-DOT" secondAttribute="height" multiplier="1:1" id="Rxj-9d-hr2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="9"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="mGQ-ep-DOT" firstAttribute="top" secondItem="XbU-d9-h1B" secondAttribute="top" constant="4" id="125-HV-duA"/>
+                        <constraint firstAttribute="trailing" secondItem="tbD-hd-HsC" secondAttribute="trailing" id="8gx-ih-71L"/>
+                        <constraint firstItem="tbD-hd-HsC" firstAttribute="top" secondItem="XbU-d9-h1B" secondAttribute="top" id="J7r-Sl-L6W"/>
+                        <constraint firstItem="tbD-hd-HsC" firstAttribute="leading" secondItem="XbU-d9-h1B" secondAttribute="leading" id="LpX-XQ-WW1"/>
+                        <constraint firstAttribute="trailing" secondItem="mGQ-ep-DOT" secondAttribute="trailing" constant="4" id="dSA-cC-Fnd"/>
+                        <constraint firstAttribute="bottom" secondItem="tbD-hd-HsC" secondAttribute="bottom" id="l0X-6H-Y36"/>
+                        <constraint firstItem="mGQ-ep-DOT" firstAttribute="width" secondItem="XbU-d9-h1B" secondAttribute="height" multiplier="1:3" id="sEI-Yt-T92"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="XbU-d9-h1B" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2vZ-ji-fRF"/>
+                <constraint firstAttribute="trailing" secondItem="XbU-d9-h1B" secondAttribute="trailing" id="7jP-el-pY6"/>
+                <constraint firstAttribute="bottom" secondItem="XbU-d9-h1B" secondAttribute="bottom" id="CNb-Va-DE5"/>
+                <constraint firstItem="XbU-d9-h1B" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="iIq-MG-xLv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="363.04347826086962" y="-68.973214285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
