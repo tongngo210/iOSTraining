@@ -3,40 +3,10 @@ import UIKit
 final class MainViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
-    var allItems = [ [Item(name: Name.Shoe.black, imageUrl: URLs.Image.Shoe.black, price: 100),
-                      Item(name: Name.Shoe.blue, imageUrl: URLs.Image.Shoe.blue, price: 540),
-                      Item(name: Name.Shoe.white, imageUrl: URLs.Image.Shoe.white, price: 200),
-                      Item(name: Name.Shoe.brown, imageUrl: URLs.Image.Shoe.brown, price: 325),
-                      Item(name: Name.Computer.mac, imageUrl: URLs.Image.Computer.mac, price: 3000),
-                      Item(name: Name.Computer.dell, imageUrl: URLs.Image.Computer.dell, price: 1500),
-                      Item(name: Name.Computer.asus, imageUrl: URLs.Image.Computer.asus, price: 1800),
-                      Item(name: Name.Computer.hp, imageUrl: URLs.Image.Computer.hp, price: 800),
-                      Item(name: Name.Cloth.coat, imageUrl: URLs.Image.Cloth.coat, price: 325),
-                      Item(name: Name.Cloth.hat, imageUrl: URLs.Image.Cloth.hat, price: 230),
-                      Item(name: Name.Cloth.scarf, imageUrl: URLs.Image.Cloth.scarf, price: 50),
-                      Item(name: Name.Cloth.shorts, imageUrl: URLs.Image.Cloth.shorts, price: 220),
-                      Item(name: Name.Cloth.tshirt, imageUrl: URLs.Image.Cloth.tshirt, price: 40),
-                      Item(name: Name.Fruit.grape, imageUrl: URLs.Image.Fruit.grape, price: 70),
-                      Item(name: Name.Fruit.lemon, imageUrl: URLs.Image.Fruit.lemon, price: 25),
-                      Item(name: Name.Fruit.orange, imageUrl: URLs.Image.Fruit.orange, price: 32),
-                      Item(name: Name.Fruit.watermelon, imageUrl: URLs.Image.Fruit.watermelon, price: 60)],
-                     [Item(name: Name.Computer.mac, imageUrl: URLs.Image.Computer.mac, price: 3000),
-                      Item(name: Name.Computer.dell, imageUrl: URLs.Image.Computer.dell, price: 1500),
-                      Item(name: Name.Computer.asus, imageUrl: URLs.Image.Computer.asus, price: 1800),
-                      Item(name: Name.Computer.hp, imageUrl: URLs.Image.Computer.hp, price: 800)],
-                     [Item(name: Name.Fruit.grape, imageUrl: URLs.Image.Fruit.grape, price: 70),
-                      Item(name: Name.Fruit.lemon, imageUrl: URLs.Image.Fruit.lemon, price: 25),
-                      Item(name: Name.Fruit.orange, imageUrl: URLs.Image.Fruit.orange, price: 32),
-                      Item(name: Name.Fruit.watermelon, imageUrl: URLs.Image.Fruit.watermelon, price: 60)],
-                     [Item(name: Name.Cloth.coat, imageUrl: URLs.Image.Cloth.coat, price: 325),
-                      Item(name: Name.Cloth.hat, imageUrl: URLs.Image.Cloth.hat, price: 230),
-                      Item(name: Name.Cloth.scarf, imageUrl: URLs.Image.Cloth.scarf, price: 50),
-                      Item(name: Name.Cloth.shorts, imageUrl: URLs.Image.Cloth.shorts, price: 220),
-                      Item(name: Name.Cloth.tshirt, imageUrl: URLs.Image.Cloth.tshirt, price: 40)] ]
+    private var allItems = Item.allItems
+    var itemsInCart: [Item] = []
+    private var storedOffsets: [Int: CGFloat] = [:]
     
-    var itemsInCart = [Item]()
-    
-    private var storedOffsets = [Int: CGFloat]()
     private let refreshControl = UIRefreshControl()
     private let customView = CustomCartButton()
     
@@ -80,11 +50,13 @@ extension MainViewController {
     }
     
     private func configRefreshControl() {
-        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        refreshControl.addTarget(self,
+                                 action: #selector(refreshAllItems),
+                                 for: .valueChanged)
         tableView.addSubview(refreshControl)
     }
     
-    @objc private func refresh(_ sender: AnyObject) {
+    @objc private func refreshAllItems() {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
             self?.refreshControl.endRefreshing()
@@ -96,11 +68,11 @@ extension MainViewController {
             //it should be filtered by ID, but I choose imageUrl
             allItems = allItems.map { items in
                 return items.map { item in
-                    if item.imageUrl == editedItem.imageUrl {
-                        return editedItem
-                    }
-                    return item
+                    item.imageUrl == editedItem.imageUrl ? editedItem : item
                 }
+            }
+            itemsInCart = itemsInCart.map { item in
+                item.imageUrl == editedItem.imageUrl ? editedItem : item
             }
         }
         DispatchQueue.main.async { [weak self] in
@@ -173,8 +145,8 @@ extension MainViewController: UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        let detailStoryboard = Scenes.detail.idStoryboard
-        guard let detailVC = detailStoryboard.instantiateViewController(withIdentifier: Scenes.detail.idViewController) as? DetailViewController
+        let detailStoryboard = UIStoryboard(name: Scenes.detail.idStoryboard, bundle: nil)
+        guard let detailVC: DetailViewController = detailStoryboard.instantiateVC()
         else { return }
         
         detailVC.item = allItems[collectionView.tag][indexPath.row]
@@ -202,12 +174,10 @@ extension MainViewController: DetailDelegate {
 //MARK: - Push navigation to CartViewController
 extension MainViewController: CustomCartButtonDelegate {
     func didTapCartButton() {
-        let cartStoryboard = Scenes.cart.idStoryboard
-        guard let cartVC = cartStoryboard.instantiateViewController(withIdentifier: Scenes.cart.idViewController) as? CartViewController
+        let cartStoryboard = UIStoryboard(name: Scenes.cart.idStoryboard, bundle: nil)
+        guard let cartVC: CartViewController = cartStoryboard.instantiateVC()
         else { return }
-        
         cartVC.itemsInCart = itemsInCart
-        
         navigationController?.pushViewController(cartVC, animated: true)
     }
 }

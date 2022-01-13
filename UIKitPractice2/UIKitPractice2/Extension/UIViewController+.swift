@@ -1,11 +1,11 @@
-import Foundation
 import UIKit
 
 fileprivate var indicatorView: UIView?
 
 extension UIViewController {
+//MARK: - Indicator
     func showIndicator(seconds: Double) {
-        indicatorView = UIView(frame: self.view.bounds)
+        indicatorView = UIView(frame: view.bounds)
         indicatorView?.backgroundColor = .gray
         
         let indicator = UIActivityIndicatorView(style: .large)
@@ -18,15 +18,15 @@ extension UIViewController {
         navigationController?.navigationBar.isHidden = true
         indicator.startAnimating()
         
-        Timer.scheduledTimer(withTimeInterval: seconds, repeats: false) { _ in
+        Timer.scheduledTimer(withTimeInterval: seconds, repeats: false) { [weak self] _ in
             indicator.stopAnimating()
             indicatorView?.removeFromSuperview()
             indicatorView = nil
-            self.navigationController?.navigationBar.isHidden = false
-            self.view.isUserInteractionEnabled = true
+            self?.navigationController?.navigationBar.isHidden = false
+            self?.view.isUserInteractionEnabled = true
         }
     }
-    
+//MARK: - AlertView
     func showAlertOneButton(title: String, message: String,
                             buttonTitle: String,
                             didTapButton: @escaping (UIAlertAction?) -> Void) {
@@ -37,7 +37,7 @@ extension UIViewController {
                                       style: .default,
                                       handler: didTapButton))
         
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     func showAlertTwoButton(title: String, message: String,
@@ -53,6 +53,6 @@ extension UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel",
                                       style: .cancel))
         
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 }

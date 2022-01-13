@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 
 fileprivate let imageCache = NSCache<AnyObject, UIImage>()

@@ -1,6 +1,6 @@
 import UIKit
 
-protocol CustomCartButtonDelegate {
+protocol CustomCartButtonDelegate: AnyObject {
     func didTapCartButton()
 }
 
@@ -9,7 +9,7 @@ final class CustomCartButton: UIView {
     @IBOutlet private weak var cartButton: UIButton!
     @IBOutlet private weak var numberLabel: UILabel!
     
-    var customCartButtonDelegate: CustomCartButtonDelegate?
+    weak var customCartButtonDelegate: CustomCartButtonDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,7 +29,7 @@ final class CustomCartButton: UIView {
         view.frame = self.bounds
         
         numberLabel.layer.masksToBounds = true
-        numberLabel.layer.cornerRadius = numberLabel.layer.bounds.height / 2
+        numberLabel.setCornerRadius(numberLabel.layer.bounds.height / 2)
     }
     
     @IBAction func didTapCartButton(_ sender: UIButton) {

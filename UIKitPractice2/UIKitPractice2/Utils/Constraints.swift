@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 
 enum Alert {
@@ -33,14 +32,14 @@ enum Scenes {
     case cart
     case payment
     
-    var idStoryboard: UIStoryboard {
+    var idStoryboard: String {
         switch self {
         case .detail:
-            return UIStoryboard(name: "Detail", bundle: nil)
+            return "Detail"
         case .cart:
-            return UIStoryboard(name: "Cart", bundle: nil)
+            return "Cart"
         case .payment:
-            return UIStoryboard(name: "Payment", bundle: nil)
+            return "Payment"
         }
     }
 

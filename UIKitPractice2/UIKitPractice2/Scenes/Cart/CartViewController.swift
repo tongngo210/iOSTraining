@@ -5,7 +5,7 @@ final class CartViewController: UIViewController {
     @IBOutlet private weak var totalPriceLabel: UILabel!
     @IBOutlet private weak var BuyButton: UIButton!
     
-    var itemsInCart = [Item]()
+    var itemsInCart: [Item] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +21,8 @@ final class CartViewController: UIViewController {
         showAlertTwoButton(title: Alert.finishCart.title,
                            message: Alert.finishCart.message,
                            buttonTitle: Alert.buttonTitleYes) { [weak self] _ in
-            let paymentStoryboard = Scenes.payment.idStoryboard
-            guard let paymentVC = paymentStoryboard.instantiateViewController(withIdentifier: Scenes.payment.idViewController) as? PaymentViewController
+            let paymentStoryboard = UIStoryboard(name: Scenes.payment.idStoryboard, bundle: nil)
+            guard let paymentVC: PaymentViewController = paymentStoryboard.instantiateVC()
             else { return }
             
             self?.navigationController?.pushViewController(paymentVC, animated: true)
@@ -47,13 +47,14 @@ extension CartViewController {
     }
     
     private func configButton() {
-        BuyButton.layer.cornerRadius = BuyButton.frame.size.height / 6
+        BuyButton.setCornerRadius(BuyButton.frame.size.height / 6)
         BuyButton.isEnabled = false
     }
     
     private func updateUI() {
-        let choosenItems = itemsInCart.filter { $0.isChoosen }
-                                      .map { $0.price }
+        let choosenItems = itemsInCart
+            .filter { $0.isChoosen }
+            .map { $0.price }
         let totalPrice = choosenItems.reduce(0.0) { partialResult, price in
             partialResult + (price ?? 0)
         }
@@ -79,18 +80,14 @@ extension CartViewController: UITableViewDelegate,
         cell.cartTableCellDelegate = self
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
 
     func tableView(_ tableView: UITableView,
                    commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            self.itemsInCart.remove(at: indexPath.row)
+            itemsInCart.remove(at: indexPath.row)
             tableView.reloadData()
-            guard let mainVC = self.navigationController?.viewControllers.first as? MainViewController
+            guard let mainVC = navigationController?.viewControllers.first as? MainViewController
             else { return }
             mainVC.itemsInCart.remove(at: indexPath.row)
         }

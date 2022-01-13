@@ -1,6 +1,6 @@
 import UIKit
 
-protocol DetailDelegate {
+protocol DetailDelegate: AnyObject {
     func didTapDone(editedItem: Item?)
     func didTapAddToCart(item: Item?)
 }
@@ -14,7 +14,7 @@ final class DetailViewController: UIViewController {
     @IBOutlet private weak var doneButton: UIButton!
     
     var item: Item?
-    var detailDelegate: DetailDelegate?
+    weak var detailDelegate: DetailDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,7 @@ extension DetailViewController {
     
     private func configButton() {
         [doneButton, addToCartButton].forEach {
-            $0?.layer.cornerRadius = doneButton.frame.size.height / 2
+            $0?.setCornerRadius(doneButton.frame.size.height / 2)
         }
     }
     
@@ -64,7 +64,7 @@ extension DetailViewController {
     private func updateUI() {
         itemImageView.getImageFromURL(item?.imageUrl ?? "")
         itemNameTextField.text = item?.name
-        itemPriceTextField.text = String(Int(item?.price ?? 0))
+        itemPriceTextField.text = String(Double(item?.price ?? 0))
     }
 }
 //MARK: - Textfield Delegate

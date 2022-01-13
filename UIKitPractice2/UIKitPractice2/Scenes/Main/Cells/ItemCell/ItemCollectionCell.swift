@@ -9,7 +9,7 @@ final class ItemCollectionCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        view.layer.cornerRadius = view.frame.size.height / 10
+        view.setCornerRadius(view.frame.size.height / 10)
     }
     
     func configView(item: Item?) {

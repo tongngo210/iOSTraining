@@ -10,7 +10,7 @@ final class PaymentViewController: UIViewController {
     @IBOutlet private weak var paymentDoneButton: UIButton!
     
     private let cities = ["Da Nang", "Ha Noi", "Hai Phong", "Ho Chi Minh", "Phu Quoc"]
-    private var filteredCities = [String]()
+    private var filteredCities: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,7 @@ extension PaymentViewController {
     }
     
     private func configButton() {
-        paymentDoneButton.layer.cornerRadius = paymentDoneButton.frame.size.height / 2
+        paymentDoneButton.setCornerRadius(paymentDoneButton.frame.size.height / 2)
         paymentDoneButton.isEnabled = false
     }
     

@@ -1,6 +1,6 @@
 import UIKit
 
-protocol CartTableCellDelegate {
+protocol CartTableCellDelegate: AnyObject {
     func didChangeValueChooseSwitch(index: Int, isChoosen: Bool)
 }
 
@@ -11,7 +11,7 @@ final class CartTableCell: UITableViewCell {
     @IBOutlet private weak var itemPriceLabel: UILabel!
     @IBOutlet private weak var chooseSwitch: UISwitch!
     
-    var cartTableCellDelegate: CartTableCellDelegate?
+    weak var cartTableCellDelegate: CartTableCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
