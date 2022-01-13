@@ -5,7 +5,7 @@ final class CustomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let spider = Spider(name: Name.Spider.tobey, poster: Image.Spider.tobeyLogo, icon: Image.Spider.tobeyIcon, rate: 0)
+        let spider = Spider.spiders.randomElement()
         customView.configView(spider: spider)
     }
 }

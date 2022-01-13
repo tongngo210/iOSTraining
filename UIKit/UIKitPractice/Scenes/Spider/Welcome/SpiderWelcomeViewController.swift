@@ -32,7 +32,7 @@ final class SpiderWelcomeViewController: UIViewController {
 
 extension SpiderWelcomeViewController: SpiderDoneDelegate {
     func didTapDone(spider: Spider) {
-        self.currentSpider = spider
+        currentSpider = spider
     }
 }
 
